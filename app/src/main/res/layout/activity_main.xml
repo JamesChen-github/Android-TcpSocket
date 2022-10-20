@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="336dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="8dp"
+        android:scrollbars="vertical"
+        android:text="Server Log"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv3"
+        app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="144dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:hint="server ip"
+        app:layout_constraintStart_toStartOf="@+id/tv3"
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+    <EditText
+        android:id="@+id/et2"
+        android:layout_width="111dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:hint="server port"
+        app:layout_constraintStart_toEndOf="@+id/et1"
+        app:layout_constraintTop_toTopOf="@+id/et1" />
+
+    <EditText
+        android:id="@+id/et3"
+        android:layout_width="139dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="180dp"
+        android:ems="10"
+        android:hint="target ip"
+        app:layout_constraintStart_toStartOf="@+id/et1"
+        app:layout_constraintTop_toBottomOf="@+id/et1" />
+
+    <EditText
+        android:id="@+id/et4"
+        android:layout_width="113dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:hint="target port"
+        app:layout_constraintStart_toEndOf="@+id/et3"
+        app:layout_constraintTop_toTopOf="@+id/et3" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="66dp"
+        android:layout_height="62dp"
+        android:text="开始监听"
+        app:layout_constraintStart_toStartOf="@+id/et1"
+        app:layout_constraintTop_toBottomOf="@+id/et5" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="71dp"
+        android:layout_height="69dp"
+        android:text="连接网络"
+        app:layout_constraintStart_toStartOf="@+id/et3"
+        app:layout_constraintTop_toBottomOf="@+id/et6" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="336dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="4dp"
+        android:scrollbars="vertical"
+        android:text="Client Log"
+        app:layout_constraintStart_toStartOf="@+id/tv1"
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="65dp"
+        android:layout_height="60dp"
+        android:text="发送消息"
+        app:layout_constraintStart_toEndOf="@+id/btn1"
+        app:layout_constraintTop_toTopOf="@+id/btn1" />
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="120dp"
+        android:layout_height="59dp"
+        android:text="socket.close"
+        app:layout_constraintStart_toEndOf="@+id/btn3"
+        app:layout_constraintTop_toTopOf="@+id/btn3" />
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="68dp"
+        android:layout_height="65dp"
+        android:text="发送消息"
+        app:layout_constraintStart_toEndOf="@+id/btn2"
+        app:layout_constraintTop_toTopOf="@+id/btn2" />
+
+    <Button
+        android:id="@+id/btn6"
+        android:layout_width="109dp"
+        android:layout_height="69dp"
+        android:text="socket.close"
+        app:layout_constraintStart_toEndOf="@+id/btn5"
+        app:layout_constraintTop_toTopOf="@+id/btn5" />
+
+    <EditText
+        android:id="@+id/et5"
+        android:layout_width="255dp"
+        android:layout_height="66dp"
+        android:ems="10"
+        android:hint="ServerMessage"
+        app:layout_constraintStart_toStartOf="@+id/et1"
+        app:layout_constraintTop_toBottomOf="@+id/et1" />
+
+    <EditText
+        android:id="@+id/et6"
+        android:layout_width="252dp"
+        android:layout_height="63dp"
+        android:ems="10"
+        android:hint="ClientMessage"
+        app:layout_constraintStart_toStartOf="@+id/et3"
+        app:layout_constraintTop_toBottomOf="@+id/et3" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="336dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:scrollbars="vertical"
+        android:text="ServerSocket Log"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="109dp"
+        android:layout_height="53dp"
+        android:text="shutInput"
+        app:layout_constraintStart_toStartOf="@+id/btn1"
+        app:layout_constraintTop_toBottomOf="@+id/btn1" />
+
+    <Button
+        android:id="@+id/btn8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="shutOutput"
+        app:layout_constraintStart_toEndOf="@+id/btn7"
+        app:layout_constraintTop_toBottomOf="@+id/btn1" />
+
+    <Button
+        android:id="@+id/btn9"
+        android:layout_width="106dp"
+        android:layout_height="57dp"
+        android:text="shutInput"
+        app:layout_constraintStart_toStartOf="@+id/btn2"
+        app:layout_constraintTop_toBottomOf="@+id/btn2" />
+
+    <Button
+        android:id="@+id/btn10"
+        android:layout_width="126dp"
+        android:layout_height="53dp"
+        android:text="shutOutput"
+        app:layout_constraintStart_toEndOf="@+id/btn9"
+        app:layout_constraintTop_toTopOf="@+id/btn9" />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="108dp"
+        android:layout_height="40dp"
+        android:text="isClose()==true"
+        app:layout_constraintStart_toEndOf="@+id/et2"
+        app:layout_constraintTop_toTopOf="@+id/et2" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="106dp"
+        android:layout_height="38dp"
+        android:text="isInputShutdown==true"
+        app:layout_constraintStart_toStartOf="@+id/tv4"
+        app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="107dp"
+        android:layout_height="37dp"
+        android:text="isOutputShutdown==true"
+        app:layout_constraintStart_toEndOf="@+id/et2"
+        app:layout_constraintTop_toBottomOf="@+id/tv5" />
+
+    <TextView
+        android:id="@+id/tv7"
+        android:layout_width="106dp"
+        android:layout_height="44dp"
+        android:text="isConnected==false"
+        app:layout_constraintStart_toStartOf="@+id/tv6"
+        app:layout_constraintTop_toBottomOf="@+id/tv6" />
+
+    <TextView
+        android:id="@+id/tv8"
+        android:layout_width="109dp"
+        android:layout_height="44dp"
+        android:text="isBound==false"
+        app:layout_constraintStart_toStartOf="@+id/tv7"
+        app:layout_constraintTop_toBottomOf="@+id/tv7" />
+
+    <TextView
+        android:id="@+id/tv9"
+        android:layout_width="113dp"
+        android:layout_height="42dp"
+        android:text="isClose()==true"
+        app:layout_constraintStart_toEndOf="@+id/et4"
+        app:layout_constraintTop_toTopOf="@+id/et3" />
+
+    <TextView
+        android:id="@+id/tv10"
+        android:layout_width="114dp"
+        android:layout_height="48dp"
+        android:text="isInputShutdown==true"
+        app:layout_constraintStart_toEndOf="@+id/et4"
+        app:layout_constraintTop_toBottomOf="@+id/tv9" />
+
+    <TextView
+        android:id="@+id/tv11"
+        android:layout_width="111dp"
+        android:layout_height="43dp"
+        android:text="isOutputShutdown==true"
+        app:layout_constraintStart_toStartOf="@+id/tv10"
+        app:layout_constraintTop_toBottomOf="@+id/tv10" />
+
+    <TextView
+        android:id="@+id/tv12"
+        android:layout_width="111dp"
+        android:layout_height="43dp"
+        android:text="isConnected==false"
+        app:layout_constraintStart_toStartOf="@+id/tv11"
+        app:layout_constraintTop_toBottomOf="@+id/tv11" />
+
+    <TextView
+        android:id="@+id/tv13"
+        android:layout_width="110dp"
+        android:layout_height="47dp"
+        android:text="isBound==false"
+        app:layout_constraintStart_toStartOf="@+id/tv12"
+        app:layout_constraintTop_toBottomOf="@+id/tv12" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
