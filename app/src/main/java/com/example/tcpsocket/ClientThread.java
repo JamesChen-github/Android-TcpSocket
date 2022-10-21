@@ -15,7 +15,7 @@ public class ClientThread extends Thread {
     private Socket socket;
     private String targetIp;
     private int targetPort;
-    private String TAG = "cjh ClientThread";
+    private final String TAG = "cjh ClientThread";
     public boolean clientClosed;
     public boolean clientInputShutdown;
     public boolean clientOutputShutdown;

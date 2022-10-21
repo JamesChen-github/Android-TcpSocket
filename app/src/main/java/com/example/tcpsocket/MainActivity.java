@@ -5,9 +5,13 @@ import static com.example.tcpsocket.ServerThread.serverSendMsg;
 import static com.example.tcpsocket.ServerThread.serverShutdownInput;
 import static com.example.tcpsocket.ServerThread.serverShutdownOutput;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Message;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
@@ -53,9 +57,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Boolean serverStarted = false;
     Boolean serverConnected = false;
     Boolean clientStarted = false;
-    MainServer mainServer;
+    MainServerThread mainServerThread;
     ClientThread clientThread;
     String str="";
+    Handler handler;
 
 
 
@@ -117,6 +122,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 str += "12345678901234567890123456789012345678901234567890";
             }
         }
+        handler = new Handler(new Handler.Callback() {
+            @Override
+            public boolean handleMessage(@NonNull Message msg) {
+                switch (msg.what) {
+                    case MainServerThread.mainServerStarted:
+                        tv3.setText("--服务器持续监听端口--");
+                        break;
+                    case MainServerThread.serverThreadStarted:
+                        tv1.setText("服务器得到客户端连接，建立socket");
+                        break;
+                    default:
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
 
@@ -193,9 +214,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 et2.setText("9999");
                 serverPort = 9999;
             }
-            mainServer = new MainServer(this, serverPort);
-            mainServer.start();
-            serverStarted = true;
+            mainServerThread = new MainServerThread();
+            mainServerThread.setServerPort(serverPort);
+            mainServerThread.setHandler(handler);
+            mainServerThread.start();
         }
     }
 
@@ -232,16 +254,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             btn2.setText("连接网络");
         }
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-

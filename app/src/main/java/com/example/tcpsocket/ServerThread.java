@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 public class ServerThread extends Thread {
     static Socket socket;
-    static String TAG = "cjh ServerThread";
+    static final String TAG = "cjh ServerThread";
     public boolean serverClosed;
     public boolean serverInputShutdown;
     public boolean serverOutputShutdown;
@@ -33,7 +33,6 @@ public class ServerThread extends Thread {
 
     @Override
     public void run() {
-        Log.d(TAG,"服务器得到客户端连接，建立socket：" + this.socket);
 //        refreshStatus();
 
         while(this.socket !=null && this.socket.isConnected() && this.socket.isBound() && !this.socket.isClosed()){
